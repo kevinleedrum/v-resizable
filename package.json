@@ -1,6 +1,6 @@
 {
   "name": "v-resizable",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Vue directive for resizable elements",
   "main": "dist/index.js",
   "scripts": {
@@ -29,10 +29,7 @@
   "babel": {
     "presets": [
       [
-        "env",
-        {
-          "modules": false
-        }
+        "env"
       ]
     ]
   },
