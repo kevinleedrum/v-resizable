@@ -1,0 +1,46 @@
+{
+  "name": "v-resizable",
+  "version": "1.0.0",
+  "description": "Vue directive for resizable elements",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rimraf dist && babel src -d dist"
+  },
+  "keywords": [
+    "vue",
+    "vuejs",
+    "directive",
+    "resize",
+    "resizable",
+    "vue-directive"
+  ],
+  "author": "kevinleedrum",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kevinleedrum/v-resizable"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "rimraf": "^3.0.2"
+  },
+  "browserslist": "> 0.25%, not dead",
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "modules": false
+        }
+      ]
+    ]
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": false,
+    "arrowParens": "avoid",
+    "singleQuote": true
+  }
+}
