@@ -30,7 +30,7 @@ const bind = (el, { value, modifiers }) => {
   function setOptions() {
     const getModifier = x =>
       value && value[x] && typeof value[x] === 'number' ? value[x] : null
-    const getOption = getModifier(x) || defaults[x]
+    const getOption = x => getModifier(x) || defaults[x]
     minWidth = getOption('minWidth')
     maxWidth = getOption('maxWidth')
     minHeight = getOption('minHeight')
@@ -60,7 +60,7 @@ const bind = (el, { value, modifiers }) => {
     handleEl.style.touchAction = 'none'
     handleEl.style.userSelect = 'none'
     handleEl.style.zIndex =
-      handle.length === 1 ? handleSideZIndex : handleCornerZIndex
+      handle.length === 1 ? handleZIndex : handleCornerZIndex
     handleEl.style.cursor = getCursor(handle)
     if (handle.includes('t')) {
       handleEl.style.top = handleOffsetPx
@@ -190,7 +190,7 @@ function getCursor(handle) {
   )
 }
 
-export const setDefaults = options => {
+const setDefaults = options => {
   defaults = Object.assign({}, defaults, options)
 }
 

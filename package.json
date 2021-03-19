@@ -1,10 +1,10 @@
 {
   "name": "v-resizable",
-  "version": "0.0.2",
+  "version": "0.0.10",
   "description": "Vue directive for resizable elements",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rimraf dist && babel src -d dist"
+    "build": "rimraf dist && rollup -c"
   },
   "keywords": [
     "vue",
@@ -21,16 +21,15 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "rimraf": "^3.0.2"
+    "@rollup/plugin-buble": "^0.21.3",
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.42.0"
   },
   "browserslist": "> 0.25%, not dead",
   "babel": {
     "presets": [
-      [
-        "env"
-      ]
+      "@babel/preset-env"
     ]
   },
   "prettier": {
@@ -39,5 +38,6 @@
     "semi": false,
     "arrowParens": "avoid",
     "singleQuote": true
-  }
+  },
+  "dependencies": {}
 }
