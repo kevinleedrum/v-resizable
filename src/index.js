@@ -124,31 +124,33 @@ const bind = (el, { value, modifiers }) => {
     const evtData = isTouch ? e.touches[0] : e
     const dx = evtData.clientX - startX
     const dy = evtData.clientY - startY
+    const currentWidth = el.clientWidth
+    const currentHeight = el.clientHeight
 
     if (activeHandle.includes('t')) {
       const newHeight = Math.min(maxHeight, Math.max(minHeight, height - dy))
-      if (newHeight >= minHeight && newHeight <= maxHeight) {
+      if (currentHeight !== newHeight && newHeight >= minHeight && newHeight <= maxHeight) {
         el.style.height = newHeight + 'px'
         el.style.top = top + dy + 'px'
       }
     }
     if (activeHandle.includes('b')) {
       const newHeight = Math.min(maxHeight, Math.max(minHeight, height + dy))
-      if (newHeight >= minHeight && newHeight <= maxHeight) {
+      if (currentHeight !== newHeight && newHeight >= minHeight && newHeight <= maxHeight) {
         el.style.height = newHeight + 'px'
         el.style.top = top + 'px'
       }
     }
     if (activeHandle.includes('l')) {
       const newWidth = Math.min(maxWidth, Math.max(minWidth, width - dx))
-      if (newWidth >= minWidth && newWidth <= maxWidth) {
+      if (currentWidth !== newWidth && width !== newWidth && newWidth >= minWidth && newWidth <= maxWidth) {
         el.style.width = newWidth + 'px'
         el.style.left = left + dx + 'px'
       }
     }
     if (activeHandle.includes('r')) {
       const newWidth = Math.min(maxWidth, Math.max(minWidth, width + dx))
-      if (newWidth >= minWidth && newWidth <= maxWidth) {
+      if (currentWidth !== newWidth && newWidth >= minWidth && newWidth <= maxWidth) {
         el.style.width = newWidth + 'px'
         el.style.left = left + 'px'
       }
