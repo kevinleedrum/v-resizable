@@ -40,8 +40,8 @@ const bind = (el, { value, modifiers }) => {
   }
 
   function addHandles() {
-    if (Object.keys(modifiers).some(m => handles.includes(m))) {
-      handles = allHandles.filter(m => modifiers(m))
+    if (Object.keys(modifiers).some(m => allHandles.includes(m))) {
+      handles = allHandles.filter(m => modifiers[m])
     } else {
       handles = defaults.handles
     }
