@@ -4,7 +4,7 @@
 [![Vue 3.x](https://img.shields.io/badge/Vue-3.x-brightgreen.svg)](https://v3.vuejs.org/guide/)
 [![npm](https://img.shields.io/npm/v/v-resizable.svg)](https://www.npmjs.com/package/v-resizable)
 ![minified size](https://img.shields.io/bundlephobia/min/v-resizable?label=minified%20size&style=flat)
-[![license](https://img.shields.io/apm/l/v-resizable)](https://github.com/kevinleedrum/v-resizable/blob/main/LICENSE)
+[![license](https://img.shields.io/github/license/kevinleedrum/v-resizable)](https://github.com/kevinleedrum/v-resizable/blob/main/LICENSE)
 
 This Vue (2.x / 3.x) plugin adds a `v-resizable` directive to make an element resizable. Unlike the CSS `resize` property, the element may be resized from any side or corner, and a `resize` event is emitted.
 
