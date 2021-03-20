@@ -1,6 +1,6 @@
 {
   "name": "v-resizable",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Vue directive for resizable elements",
   "main": "dist/index.js",
   "scripts": {
