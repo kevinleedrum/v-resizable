@@ -122,39 +122,30 @@ const bind = (el, { value, modifiers }) => {
   function move(e) {
     const isTouch = e.type === 'touchmove' && e.touches.length > 0
     const evtData = isTouch ? e.touches[0] : e
-    const dx = evtData.clientX - startX
-    const dy = evtData.clientY - startY
-    const currentWidth = el.clientWidth
-    const currentHeight = el.clientHeight
+    let dx = evtData.clientX - startX
+    let dy = evtData.clientY - startY
 
     if (activeHandle.includes('t')) {
       const newHeight = Math.min(maxHeight, Math.max(minHeight, height - dy))
-      if (currentHeight !== newHeight && newHeight >= minHeight && newHeight <= maxHeight) {
-        el.style.height = newHeight + 'px'
-        el.style.top = top + dy + 'px'
-      }
+      dy = height - newHeight
+      el.style.height = newHeight + 'px'
+      el.style.top = top + dy + 'px'
     }
     if (activeHandle.includes('b')) {
       const newHeight = Math.min(maxHeight, Math.max(minHeight, height + dy))
-      if (currentHeight !== newHeight && newHeight >= minHeight && newHeight <= maxHeight) {
-        el.style.height = newHeight + 'px'
-        el.style.top = top + 'px'
-      }
+      el.style.height = newHeight + 'px'
     }
     if (activeHandle.includes('l')) {
       const newWidth = Math.min(maxWidth, Math.max(minWidth, width - dx))
-      if (currentWidth !== newWidth && width !== newWidth && newWidth >= minWidth && newWidth <= maxWidth) {
-        el.style.width = newWidth + 'px'
-        el.style.left = left + dx + 'px'
-      }
+      dx = width - newWidth
+      el.style.width = newWidth + 'px'
+      el.style.left = left + dx + 'px'
     }
     if (activeHandle.includes('r')) {
-      const newWidth = Math.min(maxWidth, Math.max(minWidth, width + dx))
-      if (currentWidth !== newWidth && newWidth >= minWidth && newWidth <= maxWidth) {
-        el.style.width = newWidth + 'px'
-        el.style.left = left + 'px'
-      }
+      newWidth = Math.min(maxWidth, Math.max(minWidth, width + dx))
+      el.style.width = newWidth + 'px'
     }
+
     el.dispatchEvent(new CustomEvent('resize'))
     e.preventDefault()
   }
