@@ -134,6 +134,7 @@ const bind = (el, { value, modifiers }) => {
     if (activeHandle.includes('b')) {
       const newHeight = Math.min(maxHeight, Math.max(minHeight, height + dy))
       el.style.height = newHeight + 'px'
+      el.style.top = top + 'px'
     }
     if (activeHandle.includes('l')) {
       const newWidth = Math.min(maxWidth, Math.max(minWidth, width - dx))
@@ -142,8 +143,9 @@ const bind = (el, { value, modifiers }) => {
       el.style.left = left + dx + 'px'
     }
     if (activeHandle.includes('r')) {
-      newWidth = Math.min(maxWidth, Math.max(minWidth, width + dx))
+      const newWidth = Math.min(maxWidth, Math.max(minWidth, width + dx))
       el.style.width = newWidth + 'px'
+      el.style.left = left + 'px'
     }
 
     el.dispatchEvent(new CustomEvent('resize'))
