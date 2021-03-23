@@ -8,6 +8,8 @@
 
 This Vue (2.x / 3.x) plugin adds a `v-resizable` directive to make an element resizable. Unlike the CSS `resize` property, the element may be resized from any side or corner, and a `resize` event is emitted.
 
+🚀 [Live Demo](https://codepen.io/kevinleedrum/pen/OJbKPYE)
+
 ## Installation & Usage
 
 Install the package using npm/yarn.
@@ -98,7 +100,7 @@ Vue.use(VResizable, {
 })
 ```
 
-When including `v-resizable` as a global script, you can instead call `VResizable.setDefaults`.
+When including `v-resizable` as a global script, you can instead call `VResizable.setDefaults`. Be sure to set defaults _before_ creating your Vue instance.
 
 ```js
 VResizable.setDefaults({
