@@ -106,8 +106,8 @@ const bind = (el, { value, modifiers }) => {
     startY = evtData.clientY
     left = el.offsetLeft
     top = el.offsetTop
-    width = el.clientWidth
-    height = el.clientHeight
+    width = parseInt(window.getComputedStyle(el).getPropertyValue('width'))
+    height = parseInt(window.getComputedStyle(el).getPropertyValue('height'))
 
     document.documentElement.style.cursor = getCursor(e.target.dataset.handle)
     activeHandle = e.target.dataset.handle
